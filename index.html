@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Monarch Wall - Exclusive Leader Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-purple: #2d1b69;
+            --deep-purple: #1a0f3d;
+            --crown-gold: #d4af37;
+            --light-gold: #f4e4a6;
+            --marble-white: #f8f5f0;
+            --velvet-black: #0a0a0a;
+            --diamond-blue: #8ae6ff;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+            --text-light: #f0f0f0;
+            --text-dark: #1a1a1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--velvet-black);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+            animation: slideDown 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        
+        @keyframes slideDown {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--crown-gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1.5px;
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            color: var(--diamond-blue);
+            animation: sparkle 3s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; filter: drop-shadow(0 0 5px var(--diamond-blue)); }
+        }
+        
+        .logo-text {
+            position: relative;
+        }
+        
+        .logo-text:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--crown-gold), transparent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--crown-gold);
+            transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        
+        nav ul li a:hover {
+            color: var(--crown-gold);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .language-selector, .join-btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        .language-selector {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            margin-right: 15px;
+        }
+        
+        .join-btn {
+            background: linear-gradient(135deg, var(--crown-gold), #a88b1d);
+            color: var(--text-dark);
+            border: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .join-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .join-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .join-btn:hover:before {
+            left: 100%;
+        }
+        
+        /* Hero Section with Top Profile */
+        .hero-section {
+            margin-top: 100px;
+            padding: 60px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(45, 27, 105, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.2) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h1 {
+            font-size: 48px;
+            color: var(--crown-gold);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title p {
+            font-size: 20px;
+            color: var(--light-gold);
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        /* Top Profile Card */
+        .top-profile-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .top-profile-card {
+            background: linear-gradient(145deg, rgba(26, 15, 61, 0.9), rgba(10, 10, 10, 0.9));
+            border-radius: 20px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        
+        .top-profile-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .top-profile-card:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--crown-gold), var(--diamond-blue), var(--royal-purple), var(--crown-gold));
+            z-index: -1;
+            border-radius: 22px;
+            animation: rotatingBorder 8s linear infinite;
+            background-size: 400% 400%;
+        }
+        
+        @keyframes rotatingBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .top-profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .crown-badge {
+            font-size: 50px;
+            color: var(--crown-gold);
+            margin-right: 30px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.5));
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .top-profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--crown-gold);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+            transition: transform 0.5s;
+        }
+        
+        .top-profile-card:hover .top-profile-image {
+            transform: scale(1.05);
+        }
+        
+        .top-profile-info {
+            text-align: center;
+        }
+        
+        .top-profile-name {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: var(--light-gold);
+            letter-spacing: 1.5px;
+        }
+        
+        .top-profile-title {
+            font-size: 22px;
+            color: var(--diamond-blue);
+            margin-bottom: 25px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .top-profile-bio {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .auction-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 25px 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            margin-top: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .auction-badge:hover {
+            border-color: var(--crown-gold);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+        
+        .auction-badge h3 {
+            color: var(--crown-gold);
+            margin-bottom: 15px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .auction-badge h3 i {
+            margin-right: 10px;
+        }
+        
+        .auction-badge p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .auction-btn {
+            background: linear-gradient(135deg, var(--diamond-blue), #5cc2d6);
+            color: var(--text-dark);
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .auction-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .auction-btn:hover:before {
+            left: 100%;
+        }
+        
+        .auction-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(185, 242, 255, 0.5);
+        }
+        
+        /* YENİ: Category Tab Container - Expandable */
+        .category-tab-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .category-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 40px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            min-width: 220px;
+            text-align: center;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, rgba(26, 15, 61, 0.7), rgba(10, 10, 10, 0.9));
+            max-width: 280px;
+            width: 100%;
+        }
+        
+        .category-tab:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .category-tab.diamond:before {
+            background: var(--diamond-blue);
+        }
+        
+        .category-tab.gold:before {
+            background: var(--crown-gold);
+        }
+        
+        .category-tab.silver:before {
+            background: var(--silver);
+        }
+        
+        .category-tab.bronze:before {
+            background: var(--bronze);
+        }
+        
+        .category-tab.active {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            max-width: 100%;
+            width: 100%;
+            z-index: 10;
+        }
+        
+        .category-tab.diamond.active {
+            border-color: var(--diamond-blue);
+            box-shadow: 0 20px 40px rgba(138, 230, 255, 0.3);
+        }
+        
+        .category-tab.gold.active {
+            border-color: var(--crown-gold);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+        }
+        
+        .category-tab.silver.active {
+            border-color: var(--silver);
+            box-shadow: 0 20px 40px rgba(192, 192, 192, 0.3);
+        }
+        
+        .category-tab.bronze.active {
+            border-color: var(--bronze);
+            box-shadow: 0 20px 40px rgba(205, 127, 50, 0.3);
+        }
+        
+        .category-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            transition: transform 0.4s;
+        }
+        
+        .category-tab.active .category-icon {
+            transform: scale(1.1);
+        }
+        
+        .category-tab.diamond .category-icon {
+            color: var(--diamond-blue);
+            filter: drop-shadow(0 5px 15px rgba(138, 230, 255, 0.5));
+        }
+        
+        .category-tab.gold .category-icon {
+            color: var(--crown-gold);
+            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.5));
+        }
+        
+        .category-tab.silver .category-icon {
+            color: var(--silver);
+            filter: drop-shadow(0 5px 15px rgba(192, 192, 192, 0.5));
+        }
+        
+        .category-tab.bronze .category-icon {
+            color: var(--bronze);
+            filter: drop-shadow(0 5px 15px rgba(205, 127, 50, 0.5));
+        }
+        
+        .category-title {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .category-tab.diamond .category-title {
+            color: var(--diamond-blue);
+        }
+        
+        .category-tab.gold .category-title {
+            color: var(--crown-gold);
+        }
+        
+        .category-tab.silver .category-title {
+            color: var(--silver);
+        }
+        
+        .category-tab.bronze .category-title {
+            color: var(--bronze);
+        }
+        
+        .category-count {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+        
+        /* YENİ: Category Content - Profiller burada gösterilecek */
+        .category-content {
+            display: none;
+            width: 100%;
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, rgba(26, 15, 61, 0.9), rgba(10, 10, 10, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .category-tab.active .category-content {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .category-header h3 {
+            font-size: 28px;
+            color: var(--crown-gold);
+            letter-spacing: 1.5px;
+        }
+        
+        .close-category {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--crown-gold);
+            border: 1px solid var(--crown-gold);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        
+        .close-category:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        /* Marquee Container */
+        .marquee-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            min-height: 300px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            margin-bottom: 20px;
+        }
+        
+        .marquee-container.expanded {
+            min-height: auto;
+            height: auto;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .marquee-container.expanded .marquee-track {
+            animation-play-state: paused;
+            transform: translateX(0);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+        }
+        
+        .marquee-container.expanded .marquee-member {
+            width: 100%;
+            margin: 0;
+            flex: none;
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .marquee-container.expanded .marquee-member:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+        
+        .expand-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--crown-gold);
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 10;
+        }
+        
+        .marquee-container:hover .expand-indicator {
+            opacity: 1;
+        }
+        
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+            padding: 0 20px;
+            transition: all 0.5s ease;
+        }
+        
+        .marquee-track.paused {
+            animation-play-state: paused;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .marquee-member {
+            flex: 0 0 auto;
+            width: 250px;
+            background: linear-gradient(145deg, rgba(26, 15, 61, 0.8), rgba(10, 10, 10, 0.9));
+            border-radius: 12px;
+            padding: 25px;
+            margin: 0 15px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            border: 1px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .marquee-member:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+        
+        .marquee-member.diamond:before {
+            background: linear-gradient(90deg, var(--diamond-blue), #8ae6ff, var(--diamond-blue));
+        }
+        
+        .marquee-member.gold:before {
+            background: linear-gradient(90deg, var(--crown-gold), #f4e4a6, var(--crown-gold));
+        }
+        
+        .marquee-member.silver:before {
+            background: linear-gradient(90deg, var(--silver), #e0e0e0, var(--silver));
+        }
+        
+        .marquee-member.bronze:before {
+            background: linear-gradient(90deg, var(--bronze), #e6a857, var(--bronze));
+        }
+        
+        .marquee-member:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
+        
+        .marquee-member.diamond:hover {
+            border-color: var(--diamond-blue);
+            box-shadow: 0 15px 30px rgba(138, 230, 255, 0.3);
+        }
+        
+        .marquee-member.gold:hover {
+            border-color: var(--crown-gold);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .marquee-member.silver:hover {
+            border-color: var(--silver);
+            box-shadow: 0 15px 30px rgba(192, 192, 192, 0.3);
+        }
+        
+        .marquee-member.bronze:hover {
+            border-color: var(--bronze);
+            box-shadow: 0 15px 30px rgba(205, 127, 50, 0.3);
+        }
+        
+        .marquee-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid;
+            margin-bottom: 20px;
+            transition: transform 0.4s;
+        }
+        
+        .marquee-member:hover .marquee-image {
+            transform: scale(1.1);
+        }
+        
+        .marquee-member.diamond .marquee-image {
+            border-color: var(--diamond-blue);
+            box-shadow: 0 0 20px rgba(138, 230, 255, 0.5);
+        }
+        
+        .marquee-member.gold .marquee-image {
+            border-color: var(--crown-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        .marquee-member.silver .marquee-image {
+            border-color: var(--silver);
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+        }
+        
+        .marquee-member.bronze .marquee-image {
+            border-color: var(--bronze);
+            box-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+        }
+        
+        .marquee-name {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--light-gold);
+            letter-spacing: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .marquee-title {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            opacity: 0.9;
+            font-weight: 300;
+            height: 40px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .marquee-member.diamond .marquee-title {
+            color: var(--diamond-blue);
+        }
+        
+        .marquee-member.gold .marquee-title {
+            color: var(--crown-gold);
+        }
+        
+        .marquee-member.silver .marquee-title {
+            color: var(--silver);
+        }
+        
+        .marquee-member.bronze .marquee-title {
+            color: var(--bronze);
+        }
+        
+        .marquee-tier-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .marquee-member.diamond .marquee-tier-badge {
+            background: rgba(138, 230, 255, 0.1);
+            color: var(--diamond-blue);
+            border: 1px solid rgba(138, 230, 255, 0.3);
+        }
+        
+        .marquee-member.gold .marquee-tier-badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--crown-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .marquee-member.silver .marquee-tier-badge {
+            background: rgba(192, 192, 192, 0.1);
+            color: var(--silver);
+            border: 1px solid rgba(192, 192, 192, 0.3);
+        }
+        
+        .marquee-member.bronze .marquee-tier-badge {
+            background: rgba(205, 127, 50, 0.1);
+            color: var(--bronze);
+            border: 1px solid rgba(205, 127, 50, 0.3);
+        }
+        
+        /* Profile Detail Modal */
+        .profile-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .profile-modal-content {
+            background: linear-gradient(145deg, rgba(26, 15, 61, 0.95), rgba(10, 10, 10, 0.98));
+            min-height: 100vh;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            border-left: 1px solid rgba(212, 175, 55, 0.2);
+            border-right: 1px solid rgba(212, 175, 55, 0.2);
+            animation: slideInUp 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        
+        @keyframes slideInUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close-profile-modal {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            font-size: 30px;
+            color: var(--crown-gold);
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.7);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .close-profile-modal:hover {
+            color: var(--light-gold);
+            border-color: var(--crown-gold);
+        }
+        
+        .profile-modal-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+        
+        .profile-modal-main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .profile-modal-image {
+            flex: 0 0 400px;
+        }
+        
+        @media (max-width: 992px) {
+            .profile-modal-image {
+                flex: 0 0 100%;
+            }
+        }
+        
+        .profile-modal-image img {
+            width: 100%;
+            border-radius: 15px;
+            border: 5px solid var(--crown-gold);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        .profile-modal-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .profile-modal-name {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            color: var(--crown-gold);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .profile-modal-title {
+            font-size: 24px;
+            color: var(--diamond-blue);
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        
+        .profile-modal-info {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .profile-modal-info h4 {
+            color: var(--crown-gold);
+            margin: 25px 0 15px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+        }
+        
+        .profile-modal-info p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .profile-modal-nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+        
+        .nav-btn {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--crown-gold);
+            border: 1px solid var(--crown-gold);
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        .nav-btn i {
+            margin: 0 10px;
+        }
+        
+        /* Membership Packages Modal */
+        .membership-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            padding: 40px 20px;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .membership-modal-content {
+            background: linear-gradient(145deg, rgba(26, 15, 61, 0.95), rgba(10, 10, 10, 0.98));
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 20px;
+            padding: 60px 40px;
+            border: 1px solid var(--crown-gold);
+            position: relative;
+            animation: modalAppear 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+        }
+        
+        @keyframes modalAppear {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .close-membership-modal {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 30px;
+            color: var(--crown-gold);
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+        
+        .close-membership-modal:hover {
+            color: var(--light-gold);
+        }
+        
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 992px) {
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .package-card {
+            background: rgba(26, 15, 61, 0.5);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .package-card:hover:before {
+            transform: translateX(100%);
+        }
+        
+        .package-card:hover {
+            border-color: var(--crown-gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+        
+        .package-price {
+            font-family: 'Cinzel', serif;
+            font-size: 52px;
+            color: var(--crown-gold);
+            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .package-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li i {
+            color: var(--crown-gold);
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .package-btn {
+            background: linear-gradient(135deg, var(--crown-gold), #a88b1d);
+            color: var(--text-dark);
+            border: none;
+            padding: 18px 30px;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .package-btn:hover:before {
+            left: 100%;
+        }
+        
+        .package-btn:hover {
+            background: linear-gradient(135deg, #e6c158, var(--crown-gold));
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .disclaimer {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 60px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--deep-purple);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--crown-gold), transparent);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--crown-gold);
+            margin-bottom: 25px;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: rgba(240, 240, 240, 0.8);
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+        
+        .footer-section a:hover {
+            color: var(--crown-gold);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(240, 240, 240, 0.6);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .top-profile-card {
+                padding: 40px 30px;
+            }
+            
+            .top-profile-image {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .profile-modal-name {
+                font-size: 40px;
+            }
+            
+            .category-tab-container {
+                gap: 15px;
+            }
+            
+            .category-tab {
+                min-width: 200px;
+                padding: 20px 30px;
+            }
+            
+            .marquee-member {
+                width: 220px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 15px;
+            }
+            
+            .top-profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .crown-badge {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .profile-modal-main {
+                flex-direction: column;
+            }
+            
+            .profile-modal-image {
+                text-align: center;
+            }
+            
+            .profile-modal-image img {
+                max-width: 400px;
+            }
+            
+            .section-title h1 {
+                font-size: 40px;
+            }
+            
+            .category-tab-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-tab {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .category-tab.active {
+                max-width: 100%;
+            }
+            
+            .marquee-member {
+                width: 200px;
+            }
+            
+            .marquee-container.expanded .marquee-track {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title h1 {
+                font-size: 36px;
+            }
+            
+            .top-profile-name {
+                font-size: 30px;
+            }
+            
+            .top-profile-title {
+                font-size: 20px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+            
+            .language-selector, .join-btn {
+                width: 100%;
+                margin-right: 0;
+            }
+            
+            .profile-modal-nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-btn {
+                justify-content: center;
+            }
+            
+            .marquee-member {
+                width: 180px;
+                padding: 20px;
+            }
+            
+            .marquee-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .marquee-container.expanded .marquee-track {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .top-profile-card {
+                padding: 30px 20px;
+            }
+            
+            .top-profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .section-title h1 {
+                font-size: 32px;
+            }
+            
+            .profile-modal-content, .membership-modal-content {
+                padding: 40px 20px;
+            }
+            
+            .profile-modal-name {
+                font-size: 32px;
+            }
+            
+            .profile-modal-title {
+                font-size: 20px;
+            }
+            
+            .category-tab {
+                padding: 15px 20px;
+            }
+            
+            .category-icon {
+                font-size: 40px;
+            }
+            
+            .category-title {
+                font-size: 20px;
+            }
+            
+            .marquee-member {
+                width: 160px;
+                padding: 15px;
+                margin: 0 10px;
+            }
+            
+            .marquee-image {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .marquee-name {
+                font-size: 16px;
+            }
+            
+            .marquee-title {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <i class="fas fa-crown"></i>
+                <div class="logo-text">The Monarch Wall</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#top-profile">Top Monarch</a></li>
+                    <li><a href="#membership">Royal Tiers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <select class="language-selector" id="languageSelector">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                </select>
+                <button class="join-btn" id="joinBtn">Become a Member</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Top Profile -->
+    <section class="hero-section" id="top-profile">
+        <div class="container">
+            <div class="section-title">
+                <h1 data-lang="en">The Monarch Wall</h1>
+                <p data-lang="en">An exclusive gallery for the world's most influential leaders, innovators, and visionaries. Secure your place among the elite.</p>
+            </div>
+            
+            <div class="top-profile-container">
+                <div class="top-profile-card" id="topProfileCard">
+                    <div class="top-profile-header">
+                        <div class="crown-badge">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Alexander Sterling" class="top-profile-image">
+                    </div>
+                    <div class="top-profile-info">
+                        <h2 class="top-profile-name">Alexander Sterling</h2>
+                        <p class="top-profile-title">Global Investment Firm CEO & Philanthropist</p>
+                        <p class="top-profile-bio">Forbes-listed among the world's 100 most influential business leaders. Holds stakes in over 50 companies across technology, finance, and energy sectors. His investment philosophy has generated returns exceeding 3000% over the past decade.</p>
+                        
+                        <div class="auction-badge">
+                            <h3><i class="fas fa-gavel"></i> <span data-lang="en">Monarch Position Auction</span></h3>
+                            <p data-lang="en">Only Diamond members can bid for the top profile position. Submit your bid through Google Form, and the highest bidder will secure this exclusive spot for the next month.</p>
+                            <p data-lang="en">Current bid: <strong>142,500 USD</strong></p>
+                            <p data-lang="en">Auction ends: <strong>December 15, 2023</strong></p>
+                            <button class="auction-btn" id="auctionBtn"><span data-lang="en">Place Bid (Diamond Members Only)</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Tabs - YENİ YAPI -->
+    <section class="category-tabs-container" id="membership">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-lang="en">Royal Membership Tiers</h2>
+                <p class="section-subtitle" data-lang="en">Click on a tier to view its exclusive members. Hover to pause scrolling, click members for details, or click anywhere to expand.</p>
+            </div>
+            
+            <div class="category-tab-container">
+                <!-- Diamond Tab -->
+                <div class="category-tab diamond active" data-category="diamond">
+                    <div class="category-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="category-title" data-lang="en">Monarch Tier</h3>
+                    <div class="category-count">6 <span data-lang="en">Exclusive Members</span></div>
+                    
+                    <!-- Profiller burada gösterilecek -->
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 data-lang="en">Monarch Tier Members</h3>
+                            <button class="close-category" data-lang="en">Close</button>
+                        </div>
+                        
+                        <div class="marquee-container" id="diamond-marquee">
+                            <div class="marquee-track" id="diamond-track">
+                                <!-- Diamond members will be loaded here by JavaScript -->
+                            </div>
+                            <div class="expand-indicator" data-lang="en">
+                                Click anywhere to expand and view all members
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gold Tab -->
+                <div class="category-tab gold" data-category="gold">
+                    <div class="category-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="category-title" data-lang="en">Royal Court</h3>
+                    <div class="category-count">5 <span data-lang="en">Distinguished Members</span></div>
+                    
+                    <!-- Profiller burada gösterilecek -->
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 data-lang="en">Royal Court Members</h3>
+                            <button class="close-category" data-lang="en">Close</button>
+                        </div>
+                        
+                        <div class="marquee-container" id="gold-marquee">
+                            <div class="marquee-track" id="gold-track">
+                                <!-- Gold members will be loaded here by JavaScript -->
+                            </div>
+                            <div class="expand-indicator" data-lang="en">
+                                Click anywhere to expand and view all members
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Silver Tab -->
+                <div class="category-tab silver" data-category="silver">
+                    <div class="category-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="category-title" data-lang="en">Noble Circle</h3>
+                    <div class="category-count">4 <span data-lang="en">Prominent Members</span></div>
+                    
+                    <!-- Profiller burada gösterilecek -->
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 data-lang="en">Noble Circle Members</h3>
+                            <button class="close-category" data-lang="en">Close</button>
+                        </div>
+                        
+                        <div class="marquee-container" id="silver-marquee">
+                            <div class="marquee-track" id="silver-track">
+                                <!-- Silver members will be loaded here by JavaScript -->
+                            </div>
+                            <div class="expand-indicator" data-lang="en">
+                                Click anywhere to expand and view all members
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bronze Tab -->
+                <div class="category-tab bronze" data-category="bronze">
+                    <div class="category-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="category-title" data-lang="en">Prestige Guild</h3>
+                    <div class="category-count">4 <span data-lang="en">Rising Members</span></div>
+                    
+                    <!-- Profiller burada gösterilecek -->
+                    <div class="category-content">
+                        <div class="category-header">
+                            <h3 data-lang="en">Prestige Guild Members</h3>
+                            <button class="close-category" data-lang="en">Close</button>
+                        </div>
+                        
+                        <div class="marquee-container" id="bronze-marquee">
+                            <div class="marquee-track" id="bronze-track">
+                                <!-- Bronze members will be loaded here by JavaScript -->
+                            </div>
+                            <div class="expand-indicator" data-lang="en">
+                                Click anywhere to expand and view all members
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Detail Modal -->
+    <div class="profile-modal" id="profileModal">
+        <div class="profile-modal-content">
+            <span class="close-profile-modal" id="closeProfileModal">&times;</span>
+            <div class="profile-modal-body" id="profileModalBody">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Membership Packages Modal -->
+    <div class="membership-modal" id="membershipModal">
+        <div class="membership-modal-content">
+            <span class="close-membership-modal" id="closeMembershipModal">&times;</span>
+            <h2 class="section-title" data-lang="en">Membership Packages</h2>
+            <p class="section-subtitle" data-lang="en">Join our exclusive network and unlock a world of premium benefits and connections</p>
+            
+            <div class="packages-container">
+                <!-- Monarch Package -->
+                <div class="package-card">
+                    <h3 data-lang="en">Monarch Membership</h3>
+                    <div class="package-price">$5,000<small data-lang="en">/year</small></div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Bid for the top Monarch profile position</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Exclusive invitations to VIP global events</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">24/7 dedicated personal concierge service</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Curated high-value investment opportunities</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Unlimited access to all network members</span></li>
+                    </ul>
+                    <button class="package-btn" data-package="diamond"><span data-lang="en">Apply Now</span></button>
+                </div>
+                
+                <!-- Royal Court Package -->
+                <div class="package-card">
+                    <h3 data-lang="en">Royal Court Access</h3>
+                    <div class="package-price">$3,000<small data-lang="en">/year</small></div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Monthly VIP networking events</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Personalized investment advisory</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Weekly market intelligence reports</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Access to Diamond and Gold members</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Luxury travel coordination service</span></li>
+                    </ul>
+                    <button class="package-btn" data-package="gold"><span data-lang="en">Apply Now</span></button>
+                </div>
+                
+                <!-- Noble Circle Package -->
+                <div class="package-card">
+                    <h3 data-lang="en">Noble Circle</h3>
+                    <div class="package-price">$2,000<small data-lang="en">/year</small></div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Quarterly exclusive networking events</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Monthly financial analysis reports</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Access to premium content library</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Professional portrait photography session</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Introductions to select elite members</span></li>
+                    </ul>
+                    <button class="package-btn" data-package="silver"><span data-lang="en">Apply Now</span></button>
+                </div>
+                
+                <!-- Prestige Guild Package -->
+                <div class="package-card">
+                    <h3 data-lang="en">Prestige Guild</h3>
+                    <div class="package-price">$500<small data-lang="en">/year</small></div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Annual exclusive networking gala</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Monthly curated newsletter</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Basic profile visibility in network</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Access to online expert seminars</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="en">Member-only community forum</span></li>
+                    </ul>
+                    <button class="package-btn" data-package="bronze"><span data-lang="en">Apply Now</span></button>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <h3><i class="fas fa-exclamation-circle"></i> <span data-lang="en">Important Information</span></h3>
+                <p data-lang="en">All membership applications undergo a thorough review process. Not all applications are accepted. Clicking "Apply Now" will redirect you to the relevant Google Form. After submission, our team will evaluate your application and, if approved, contact you via email with payment details and formal invitation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Monarch Wall</h3>
+                    <p data-lang="en">An exclusive digital gallery for the world's most influential leaders, innovators, and visionaries. Join a curated network of excellence.</p>
+                    <p>&copy; 2023 The Monarch Wall. <span data-lang="en">All rights reserved.</span></p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-lang="en">Quick Links</h3>
+                    <a href="#top-profile" data-lang="en">Top Monarch</a>
+                    <a href="#membership" data-lang="en">Royal Tiers</a>
+                    <a href="#" id="footerJoinBtn" data-lang="en">Membership Packages</a>
+                    <a href="#" data-lang="en">Privacy Policy</a>
+                    <a href="#" data-lang="en">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h3 data-lang="en">Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@themonarchwall.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-lang="en">1 Royal Avenue, Suite 1000, New York, NY</span></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-lang="en">Elevating connections to royal standards</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Profile data
+        const profiles = [
+            {
+                id: 1,
+                name: "Alexander Sterling",
+                title: "Global Investment Firm CEO & Philanthropist",
+                tier: "diamond",
+                image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Forbes-listed among the world's 100 most influential business leaders. Holds stakes in over 50 companies across technology, finance, and energy sectors. His investment philosophy has generated returns exceeding 3000% over the past decade.",
+                achievements: "Forbes Top 100 Most Influential, 3000% ROI over 10 years, 50+ company portfolio",
+                networth: "4.2 Billion USD",
+                residence: "New York, USA & London, UK",
+                education: "Harvard MBA, Stanford Economics",
+                membersince: "2018"
+            },
+            {
+                id: 2,
+                name: "James Vanderbilt",
+                title: "Tech Mogul & Venture Capitalist",
+                tier: "diamond",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Pioneering Silicon Valley entrepreneur with 5 successful exits. Currently invests in 50+ startups through his venture fund. Ranked 3rd on Forbes Midas List of top tech investors.",
+                achievements: "Forbes Midas List (3rd), 5 successful exits, 50+ startup investments",
+                networth: "2.3 Billion USD",
+                residence: "San Francisco, USA",
+                education: "MIT Computer Science",
+                membersince: "2019"
+            },
+            {
+                id: 3,
+                name: "Sophia Laurent",
+                title: "Luxury Fashion Brand CEO",
+                tier: "diamond",
+                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Transformed a 150-year-old family business into a global luxury brand with 500+ stores across 80 countries. Recognized as one of the 10 most influential women in fashion.",
+                achievements: "Global Luxury Award, Fashion Industry Leader Award, 500+ stores worldwide",
+                networth: "1.8 Billion USD",
+                residence: "Paris, France",
+                education: "École des Hautes Études Commerciales",
+                membersince: "2020"
+            },
+            {
+                id: 4,
+                name: "Marcus Chen",
+                title: "Investment Bank Chairman",
+                tier: "diamond",
+                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Founded one of Asia's largest investment banks. Managed 200+ company IPOs over 30 years. One of the most respected names in the financial world.",
+                achievements: "Asia Finance Leader of the Year, 200+ IPOs, 30-year industry veteran",
+                networth: "3.1 Billion USD",
+                residence: "Hong Kong",
+                education: "University of Hong Kong, Harvard Business School",
+                membersince: "2017"
+            },
+            {
+                id: 5,
+                name: "Michael Rhodes",
+                title: "Real Estate Tycoon & Philanthropist",
+                tier: "diamond",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Developer of the world's most luxurious real estate projects. Built iconic skyscrapers and luxury residences on 5 continents. Active philanthropist in education and healthcare.",
+                achievements: "Global Real Estate Developer of the Year, 100+ projects, Philanthropy award winner",
+                networth: "4.2 Billion USD",
+                residence: "New York, USA",
+                education: "Columbia University, Real Estate Development",
+                membersince: "2018"
+            },
+            {
+                id: 6,
+                name: "Victoria Montgomery",
+                title: "Media Mogul & Film Producer",
+                tier: "diamond",
+                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Built a global media empire spanning television, film, and digital platforms. Produced 20+ award-winning films and series. Advocate for diversity in media.",
+                achievements: "Emmy Awards, Oscar nominations, Media empire spanning 3 continents",
+                networth: "2.7 Billion USD",
+                residence: "Los Angeles, USA",
+                education: "USC School of Cinematic Arts",
+                membersince: "2021"
+            },
+            {
+                id: 7,
+                name: "Richard Moore",
+                title: "International Law Firm Senior Partner",
+                tier: "gold",
+                image: "https://images.unsplash.com/photo-1507591064344-4c6ce005-128?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "40-year legal career specializing in international trade and corporate law. Advisor to Fortune 500 companies on cross-border transactions and regulatory compliance.",
+                achievements: "Legal 500 Top Lawyer, 30+ years as senior partner, 200+ international deals",
+                networth: "450 Million USD",
+                residence: "London, UK",
+                education: "Oxford Law, Yale Postgraduate",
+                membersince: "2021"
+            },
+            {
+                id: 8,
+                name: "Isabella Rossi",
+                title: "Fashion Designer & Creative Director",
+                tier: "gold",
+                image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Built a global fashion brand from scratch in 10 years. Regularly hosts runway shows in Milan, Paris, and New York. Rising star in the fashion industry with multiple CFDA awards.",
+                achievements: "CFDA Award, Vogue covers, Global brand recognition",
+                networth: "320 Million USD",
+                residence: "Milan, Italy",
+                education: "Politecnico di Milano",
+                membersince: "2022"
+            },
+            {
+                id: 9,
+                name: "Clara Bennett",
+                title: "Tech Startup Founder & CEO",
+                tier: "gold",
+                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Founded an AI-based SaaS company that reached unicorn status in 3 years. One of the most successful female entrepreneurs in technology.",
+                achievements: "Forbes 30 Under 30, Tech Unicorn Founder, AI innovation awards",
+                networth: "280 Million USD",
+                residence: "Austin, USA",
+                education: "Stanford Computer Science",
+                membersince: "2020"
+            },
+            {
+                id: 10,
+                name: "David Chen",
+                title: "Biotech Pioneer & Researcher",
+                tier: "gold",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Developed groundbreaking gene therapies for rare diseases. Published 100+ research papers. Founded a biotech company with 3 FDA-approved treatments.",
+                achievements: "Nobel Prize nominee, 3 FDA-approved treatments, 100+ research papers",
+                networth: "520 Million USD",
+                residence: "Boston, USA",
+                education: "Harvard Medical School, PhD Genetics",
+                membersince: "2019"
+            },
+            {
+                id: 11,
+                name: "Emma Wilson",
+                title: "Luxury Hotel Chain CEO",
+                tier: "gold",
+                image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Transformed a family-owned hotel into a global luxury chain with 50+ properties. Known for exceptional service and unique architectural designs.",
+                achievements: "World Luxury Hotel Award, 50+ global properties, Hospitality innovator",
+                networth: "380 Million USD",
+                residence: "London, UK",
+                education: "Lausanne Hotel School",
+                membersince: "2021"
+            },
+            {
+                id: 12,
+                name: "Thomas Wright",
+                title: "Leading Cardiovascular Surgeon",
+                tier: "silver",
+                image: "https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "20 years of surgical experience specializing in heart transplants and minimally invasive procedures. Performed over 1,000 successful surgeries with a 99.2% success rate.",
+                achievements: "Medical Excellence Award, 1,000+ surgeries, 99.2% success rate",
+                networth: "25 Million USD",
+                residence: "Boston, USA",
+                education: "Johns Hopkins Medical School",
+                membersince: "2021"
+            },
+            {
+                id: 13,
+                name: "Chloe Parker",
+                title: "Award-Winning Architect",
+                tier: "silver",
+                image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Known for sustainable and smart building designs. Has completed 50+ projects across 15 countries. Winner of multiple international architecture awards.",
+                achievements: "International Architecture Award, 50+ projects, Sustainable design pioneer",
+                networth: "18 Million USD",
+                residence: "Copenhagen, Denmark",
+                education: "Royal Danish Academy",
+                membersince: "2022"
+            },
+            {
+                id: 14,
+                name: "Robert Kim",
+                title: "Corporate Finance Director",
+                tier: "silver",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "15 years in corporate finance with expertise in mergers and acquisitions. Successfully closed deals worth over $10 billion. Currently director at a major investment bank.",
+                achievements: "$10B+ in closed deals, M&A expert, Corporate finance leader",
+                networth: "22 Million USD",
+                residence: "Singapore",
+                education: "University of Chicago Booth School of Business",
+                membersince: "2020"
+            },
+            {
+                id: 15,
+                name: "Grace Lee",
+                title: "Tech Product Director",
+                tier: "silver",
+                image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Product lead for a major tech company's flagship products. Managed teams that created products used by over 1 billion people worldwide.",
+                achievements: "Product used by 1B+ users, Multiple patent holder, Tech innovation awards",
+                networth: "15 Million USD",
+                residence: "Seattle, USA",
+                education: "Carnegie Mellon University",
+                membersince: "2021"
+            },
+            {
+                id: 16,
+                name: "Daniel Lee",
+                title: "FinTech Startup Founder",
+                tier: "bronze",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Developed a blockchain-based payment system that reached 1 million users in 2 years. Recognized as a rising star in the fintech industry with multiple startup competition wins.",
+                achievements: "Startup Competition Winner, 1M+ users, Fintech innovation award",
+                networth: "8 Million USD",
+                residence: "Singapore",
+                education: "National University of Singapore",
+                membersince: "2023"
+            },
+            {
+                id: 17,
+                name: "Olivia Grant",
+                title: "Corporate Lawyer",
+                tier: "bronze",
+                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Specializes in major corporate mergers and acquisitions with 10 years of experience. Partner at an international law firm handling cross-border transactions.",
+                achievements: "Rising Star Lawyer, 20+ M&A deals, Cross-border transaction expert",
+                networth: "5 Million USD",
+                residence: "Toronto, Canada",
+                education: "University of Toronto Law",
+                membersince: "2023"
+            },
+            {
+                id: 18,
+                name: "Mark Taylor",
+                title: "Real Estate Developer",
+                tier: "bronze",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Specializes in luxury residential developments in major metropolitan areas. Completed 15+ high-profile projects with a focus on sustainable design.",
+                achievements: "15+ luxury projects, Sustainable development award, Rising real estate star",
+                networth: "12 Million USD",
+                residence: "Miami, USA",
+                education: "University of Florida, Real Estate",
+                membersince: "2022"
+            },
+            {
+                id: 19,
+                name: "Sophie Martin",
+                title: "Marketing Agency Founder",
+                tier: "bronze",
+                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                bio: "Founded a digital marketing agency that works with Fortune 500 companies. Known for innovative campaigns that blend traditional and digital media.",
+                achievements: "Marketing Excellence Award, Fortune 500 clients, Agency growth to 50+ employees",
+                networth: "7 Million USD",
+                residence: "Paris, France",
+                education: "HEC Paris",
+                membersince: "2022"
+            }
+        ];
+
+        // Current profile index for navigation
+        let currentProfileIndex = 0;
+        
+        // Current language
+        let currentLanguage = 'en';
+        
+        // Current active category
+        let currentCategory = 'diamond';
+        
+        // Expanded states for each category
+        const expandedStates = {
+            diamond: false,
+            gold: false,
+            silver: false,
+            bronze: false
+        };
+        
+        // Language translations
+        const translations = {
+            'en': {
+                // Header
+                'Become a Member': 'Become a Member',
+                
+                // Hero Section
+                'The Monarch Wall': 'The Monarch Wall',
+                'An exclusive gallery for the world\'s most influential leaders, innovators, and visionaries. Secure your place among the elite.': 'An exclusive gallery for the world\'s most influential leaders, innovators, and visionaries. Secure your place among the elite.',
+                'Monarch Position Auction': 'Monarch Position Auction',
+                'Only Diamond members can bid for the top profile position. Submit your bid through Google Form, and the highest bidder will secure this exclusive spot for the next month.': 'Only Diamond members can bid for the top profile position. Submit your bid through Google Form, and the highest bidder will secure this exclusive spot for the next month.',
+                'Current bid:': 'Current bid:',
+                'Auction ends:': 'Auction ends:',
+                'Place Bid (Diamond Members Only)': 'Place Bid (Diamond Members Only)',
+                
+                // Category Tabs
+                'Royal Membership Tiers': 'Royal Membership Tiers',
+                'Click on a tier to view its exclusive members. Hover to pause scrolling, click members for details, or click anywhere to expand.': 'Click on a tier to view its exclusive members. Hover to pause scrolling, click members for details, or click anywhere to expand.',
+                'Monarch Tier': 'Monarch Tier',
+                'Royal Court': 'Royal Court',
+                'Noble Circle': 'Noble Circle',
+                'Prestige Guild': 'Prestige Guild',
+                'Exclusive Members': 'Exclusive Members',
+                'Distinguished Members': 'Distinguished Members',
+                'Prominent Members': 'Prominent Members',
+                'Rising Members': 'Rising Members',
+                'Monarch Tier Members': 'Monarch Tier Members',
+                'Royal Court Members': 'Royal Court Members',
+                'Noble Circle Members': 'Noble Circle Members',
+                'Prestige Guild Members': 'Prestige Guild Members',
+                'Close': 'Close',
+                
+                // Expand Indicator
+                'Click anywhere to expand and view all members': 'Click anywhere to expand and view all members',
+                
+                // Membership Packages
+                'Membership Packages': 'Membership Packages',
+                'Join our exclusive network and unlock a world of premium benefits and connections': 'Join our exclusive network and unlock a world of premium benefits and connections',
+                '/year': '/year',
+                'Bid for the top Monarch profile position': 'Bid for the top Monarch profile position',
+                'Exclusive invitations to VIP global events': 'Exclusive invitations to VIP global events',
+                '24/7 dedicated personal concierge service': '24/7 dedicated personal concierge service',
+                'Curated high-value investment opportunities': 'Curated high-value investment opportunities',
+                'Unlimited access to all network members': 'Unlimited access to all network members',
+                'Apply Now': 'Apply Now',
+                'Monthly VIP networking events': 'Monthly VIP networking events',
+                'Personalized investment advisory': 'Personalized investment advisory',
+                'Weekly market intelligence reports': 'Weekly market intelligence reports',
+                'Access to Diamond and Gold members': 'Access to Diamond and Gold members',
+                'Luxury travel coordination service': 'Luxury travel coordination service',
+                'Quarterly exclusive networking events': 'Quarterly exclusive networking events',
+                'Monthly financial analysis reports': 'Monthly financial analysis reports',
+                'Access to premium content library': 'Access to premium content library',
+                'Professional portrait photography session': 'Professional portrait photography session',
+                'Introductions to select elite members': 'Introductions to select elite members',
+                'Annual exclusive networking gala': 'Annual exclusive networking gala',
+                'Monthly curated newsletter': 'Monthly curated newsletter',
+                'Basic profile visibility in network': 'Basic profile visibility in network',
+                'Access to online expert seminars': 'Access to online expert seminars',
+                'Member-only community forum': 'Member-only community forum',
+                'Important Information': 'Important Information',
+                'All membership applications undergo a thorough review process. Not all applications are accepted. Clicking "Apply Now" will redirect you to the relevant Google Form. After submission, our team will evaluate your application and, if approved, contact you via email with payment details and formal invitation.': 'All membership applications undergo a thorough review process. Not all applications are accepted. Clicking "Apply Now" will redirect you to the relevant Google Form. After submission, our team will evaluate your application and, if approved, contact you via email with payment details and formal invitation.',
+                
+                // Footer
+                'An exclusive digital gallery for the world\'s most influential leaders, innovators, and visionaries. Join a curated network of excellence.': 'An exclusive digital gallery for the world\'s most influential leaders, innovators, and visionaries. Join a curated network of excellence.',
+                'All rights reserved.': 'All rights reserved.',
+                'Quick Links': 'Quick Links',
+                'Top Monarch': 'Top Monarch',
+                'Royal Tiers': 'Royal Tiers',
+                'Membership Packages': 'Membership Packages',
+                'Privacy Policy': 'Privacy Policy',
+                'Terms of Service': 'Terms of Service',
+                'Contact Us': 'Contact Us',
+                '1 Royal Avenue, Suite 1000, New York, NY': '1 Royal Avenue, Suite 1000, New York, NY',
+                'Elevating connections to royal standards': 'Elevating connections to royal standards'
+            },
+            'tr': {
+                // Header
+                'Become a Member': 'Üye Ol',
+                
+                // Hero Section
+                'The Monarch Wall': 'Hükümdar Duvarı',
+                'An exclusive gallery for the world\'s most influential leaders, innovators, and visionaries. Secure your place among the elite.': 'Dünyanın en etkili liderleri, yenilikçileri ve vizyonerleri için özel bir galeri. Elitler arasındaki yerinizi güvence altına alın.',
+                'Monarch Position Auction': 'Hükümdar Konumu Açık Artırması',
+                'Only Diamond members can bid for the top profile position. Submit your bid through Google Form, and the highest bidder will secure this exclusive spot for the next month.': 'Sadece Elmas üyeler en üst profil konumu için teklif verebilir. Teklifinizi Google Form üzerinden gönderin, en yüksek teklifi veren kişi bir sonraki ay için bu özel konumu kazanacak.',
+                'Current bid:': 'Mevcut teklif:',
+                'Auction ends:': 'Açık artırma bitişi:',
+                'Place Bid (Diamond Members Only)': 'Teklif Ver (Sadece Elmas Üyeler)',
+                
+                // Category Tabs
+                'Royal Membership Tiers': 'Kraliyet Üyelik Seviyeleri',
+                'Click on a tier to view its exclusive members. Hover to pause scrolling, click members for details, or click anywhere to expand.': 'Üyeleri görmek için bir seviyeye tıklayın. Üzerine gelince kaydırma durur, üyelere tıklayınca detaylar açılır, herhangi bir yere tıklayınca genişler.',
+                'Monarch Tier': 'Hükümdar Seviyesi',
+                'Royal Court': 'Kraliyet Mahkemesi',
+                'Noble Circle': 'Asil Çember',
+                'Prestige Guild': 'Prestij Loncası',
+                'Exclusive Members': 'Özel Üyeler',
+                'Distinguished Members': 'Seçkin Üyeler',
+                'Prominent Members': 'Önemli Üyeler',
+                'Rising Members': 'Yükselen Üyeler',
+                'Monarch Tier Members': 'Hükümdar Seviyesi Üyeleri',
+                'Royal Court Members': 'Kraliyet Mahkemesi Üyeleri',
+                'Noble Circle Members': 'Asil Çember Üyeleri',
+                'Prestige Guild Members': 'Prestij Loncası Üyeleri',
+                'Close': 'Kapat',
+                
+                // Expand Indicator
+                'Click anywhere to expand and view all members': 'Tüm üyeleri görmek için herhangi bir yere tıklayın',
+                
+                // Membership Packages
+                'Membership Packages': 'Üyelik Paketleri',
+                'Join our exclusive network and unlock a world of premium benefits and connections': 'Exclusive ağımıza katılın ve premium faydalar ve bağlantılarla dolu bir dünyanın kilidini açın',
+                '/year': '/yıl',
+                'Bid for the top Monarch profile position': 'En üst Hükümdar profil konumu için teklif verme hakkı',
+                'Exclusive invitations to VIP global events': 'VIP global etkinliklere özel davetler',
+                '24/7 dedicated personal concierge service': '7/24 özel kişisel asistan hizmeti',
+                'Curated high-value investment opportunities': 'Özenle seçilmiş yüksek değerli yatırım fırsatları',
+                'Unlimited access to all network members': 'Tüm ağ üyelerine sınırsız erişim',
+                'Apply Now': 'Hemen Başvur',
+                'Monthly VIP networking events': 'Aylık VIP network etkinlikleri',
+                'Personalized investment advisory': 'Kişiselleştirilmiş yatırım danışmanlığı',
+                'Weekly market intelligence reports': 'Haftalık pazar istihbarat raporları',
+                'Access to Diamond and Gold members': 'Elmas ve Altın üyelere erişim',
+                'Luxury travel coordination service': 'Lüks seyahat koordinasyon hizmeti',
+                'Quarterly exclusive networking events': 'Üç aylık özel network etkinlikleri',
+                'Monthly financial analysis reports': 'Aylık finansal analiz raporları',
+                'Access to premium content library': 'Premium içerik kütüphanesine erişim',
+                'Professional portrait photography session': 'Profesyonel portre fotoğraf çekimi',
+                'Introductions to select elite members': 'Seçkin elit üyelere tanıtımlar',
+                'Annual exclusive networking gala': 'Yıllık özel network galası',
+                'Monthly curated newsletter': 'Aylık özenle hazırlanmış bülten',
+                'Basic profile visibility in network': 'Ağda temel profil görünürlüğü',
+                'Access to online expert seminars': 'Çevrimiçi uzman seminerlerine erişim',
+                'Member-only community forum': 'Sadece üyelere özel topluluk forumu',
+                'Important Information': 'Önemli Bilgi',
+                'All membership applications undergo a thorough review process. Not all applications are accepted. Clicking "Apply Now" will redirect you to the relevant Google Form. After submission, our team will evaluate your application and, if approved, contact you via email with payment details and formal invitation.': 'Tüm üyelik başvuruları kapsamlı bir inceleme sürecinden geçer. Tüm başvurular kabul edilmez. "Hemen Başvur" butonuna tıkladığınızda, ilgili Google Form\'a yönlendirileceksiniz. Gönderim sonrası, ekibimiz başvurunuzu değerlendirecek ve uygun bulunması durumunda size e-posta yoluyla ödeme detaylarını ve resmi daveti iletecektir.',
+                
+                // Footer
+                'An exclusive digital gallery for the world\'s most influential leaders, innovators, and visionaries. Join a curated network of excellence.': 'Dünyanın en etkili liderleri, yenilikçileri ve vizyonerleri için özel bir dijital galeri. Özenle seçilmiş bir mükemmellik ağına katılın.',
+                'All rights reserved.': 'Tüm hakları saklıdır.',
+                'Quick Links': 'Hızlı Bağlantılar',
+                'Top Monarch': 'En Üst Hükümdar',
+                'Royal Tiers': 'Kraliyet Seviyeleri',
+                'Membership Packages': 'Üyelik Paketleri',
+                'Privacy Policy': 'Gizlilik Politikası',
+                'Terms of Service': 'Kullanım Şartları',
+                'Contact Us': 'İletişim',
+                '1 Royal Avenue, Suite 1000, New York, NY': '1 Kraliyet Caddesi, Suite 1000, New York, NY',
+                'Elevating connections to royal standards': 'Bağlantıları kraliyet standartlarına yükseltmek'
+            }
+        };
+        
+        // DOM Elements
+        const profileModal = document.getElementById('profileModal');
+        const closeProfileModal = document.getElementById('closeProfileModal');
+        const profileModalBody = document.getElementById('profileModalBody');
+        const membershipModal = document.getElementById('membershipModal');
+        const closeMembershipModal = document.getElementById('closeMembershipModal');
+        const joinBtn = document.getElementById('joinBtn');
+        const footerJoinBtn = document.getElementById('footerJoinBtn');
+        const auctionBtn = document.getElementById('auctionBtn');
+        const packageBtns = document.querySelectorAll('.package-btn');
+        const topProfileCard = document.getElementById('topProfileCard');
+        const languageSelector = document.getElementById('languageSelector');
+        
+        // Category tabs
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        
+        // Marquee containers and tracks
+        const marqueeContainers = {
+            diamond: document.getElementById('diamond-marquee'),
+            gold: document.getElementById('gold-marquee'),
+            silver: document.getElementById('silver-marquee'),
+            bronze: document.getElementById('bronze-marquee')
+        };
+        
+        const marqueeTracks = {
+            diamond: document.getElementById('diamond-track'),
+            gold: document.getElementById('gold-track'),
+            silver: document.getElementById('silver-track'),
+            bronze: document.getElementById('bronze-track')
+        };
+        
+        // Close buttons
+        const closeButtons = document.querySelectorAll('.close-category');
+        
+        // Form links - replace with your actual Google Form links
+        const formLinks = {
+            diamond: 'https://docs.google.com/forms/d/e/1FAIpQLSfDdiamond_form_link/viewform',
+            gold: 'https://docs.google.com/forms/d/e/1FAIpQLSfDgold_form_link/viewform',
+            silver: 'https://docs.google.com/forms/d/e/1FAIpQLSfDsilver_form_link/viewform',
+            bronze: 'https://docs.google.com/forms/d/e/1FAIpQLSfDbronze_form_link/viewform',
+            auction: 'https://docs.google.com/forms/d/e/1FAIpQLSfDauction_form_link/viewform'
+        };
+        
+        // Initialize the page
+        function initPage() {
+            // Load all category members
+            loadAllCategoryMembers();
+            
+            // Set diamond as active by default
+            setActiveCategory('diamond');
+            
+            // Add event listeners
+            setupEventListeners();
+            
+            // Set initial language
+            updateLanguage(currentLanguage);
+        }
+        
+        // Function to load members for all categories
+        function loadAllCategoryMembers() {
+            // Load members for each category
+            loadCategoryMembers('diamond');
+            loadCategoryMembers('gold');
+            loadCategoryMembers('silver');
+            loadCategoryMembers('bronze');
+        }
+        
+        // Function to load members for a specific category
+        function loadCategoryMembers(tier) {
+            // Get members for this tier
+            const tierMembers = profiles.filter(profile => profile.tier === tier);
+            const track = marqueeTracks[tier];
+            
+            if (!track) return;
+            
+            // Clear the track
+            track.innerHTML = '';
+            
+            // If no members, show message
+            if (tierMembers.length === 0) {
+                const noMembersMessage = document.createElement('div');
+                noMembersMessage.className = 'marquee-member';
+                noMembersMessage.innerHTML = `<p style="color: var(--text-light); font-size: 18px;">${currentLanguage === 'tr' ? 'Bu kategoride henüz üye bulunmuyor.' : 'No members in this category yet.'}</p>`;
+                track.appendChild(noMembersMessage);
+                return;
+            }
+            
+            // Determine tier name based on language
+            let tierName;
+            switch(tier) {
+                case 'diamond': tierName = currentLanguage === 'tr' ? 'Hükümdar Seviyesi' : 'Monarch Tier'; break;
+                case 'gold': tierName = currentLanguage === 'tr' ? 'Kraliyet Mahkemesi' : 'Royal Court'; break;
+                case 'silver': tierName = currentLanguage === 'tr' ? 'Asil Çember' : 'Noble Circle'; break;
+                case 'bronze': tierName = currentLanguage === 'tr' ? 'Prestij Loncası' : 'Prestige Guild'; break;
+            }
+            
+            // Add members to track (duplicate for seamless scrolling)
+            for (let i = 0; i < 2; i++) {
+                tierMembers.forEach(member => {
+                    const marqueeMember = document.createElement('div');
+                    marqueeMember.className = `marquee-member ${member.tier}`;
+                    marqueeMember.setAttribute('data-profile-id', member.id);
+                    
+                    marqueeMember.innerHTML = `
+                        <img src="${member.image}" alt="${member.name}" class="marquee-image">
+                        <h3 class="marquee-name">${member.name}</h3>
+                        <p class="marquee-title">${member.title}</p>
+                        <div class="marquee-tier-badge">${tierName}</div>
+                    `;
+                    
+                    track.appendChild(marqueeMember);
+                    
+                    // Add click event to marquee member
+                    marqueeMember.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        loadProfile(member.id);
+                    });
+                });
+            }
+            
+            // Reset marquee state
+            resetMarqueeState(tier);
+        }
+        
+        // Function to reset marquee state for a category
+        function resetMarqueeState(tier) {
+            const marqueeContainer = marqueeContainers[tier];
+            const track = marqueeTracks[tier];
+            
+            if (marqueeContainer && track) {
+                // Reset expanded state
+                expandedStates[tier] = false;
+                marqueeContainer.classList.remove('expanded');
+                track.classList.remove('paused');
+                
+                // Ensure marquee animation is running
+                track.style.animationPlayState = 'running';
+            }
+        }
+        
+        // Function to set active category
+        function setActiveCategory(tier) {
+            // Close all category tabs first
+            categoryTabs.forEach(tab => {
+                tab.classList.remove('active');
+                // Reset marquee state for each tab
+                const tabTier = tab.getAttribute('data-category');
+                resetMarqueeState(tabTier);
+            });
+            
+            // Set new active category
+            currentCategory = tier;
+            
+            // Add active class to selected tab
+            const activeTab = document.querySelector(`.category-tab[data-category="${tier}"]`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+                
+                // Scroll to active tab
+                setTimeout(() => {
+                    activeTab.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                }, 100);
+            }
+        }
+        
+        // Function to toggle expand for a category
+        function toggleExpandCategory(tier) {
+            const marqueeContainer = marqueeContainers[tier];
+            const track = marqueeTracks[tier];
+            
+            if (!marqueeContainer || !track) return;
+            
+            expandedStates[tier] = !expandedStates[tier];
+            
+            if (expandedStates[tier]) {
+                marqueeContainer.classList.add('expanded');
+                track.classList.add('paused');
+                track.style.animationPlayState = 'paused';
+            } else {
+                marqueeContainer.classList.remove('expanded');
+                track.classList.remove('paused');
+                track.style.animationPlayState = 'running';
+            }
+        }
+        
+        // Function to load profile into modal
+        function loadProfile(profileId) {
+            const profile = profiles.find(p => p.id === profileId);
+            if (!profile) return;
+            
+            currentProfileIndex = profiles.findIndex(p => p.id === profileId);
+            
+            // Determine tier color, icon, and name
+            let tierColor, tierIcon, tierName;
+            switch(profile.tier) {
+                case 'diamond':
+                    tierColor = 'var(--diamond-blue)';
+                    tierIcon = 'fas fa-gem';
+                    tierName = currentLanguage === 'tr' ? 'Hükümdar Seviyesi' : 'Monarch Tier';
+                    break;
+                case 'gold':
+                    tierColor = 'var(--crown-gold)';
+                    tierIcon = 'fas fa-crown';
+                    tierName = currentLanguage === 'tr' ? 'Kraliyet Mahkemesi' : 'Royal Court';
+                    break;
+                case 'silver':
+                    tierColor = 'var(--silver)';
+                    tierIcon = 'fas fa-medal';
+                    tierName = currentLanguage === 'tr' ? 'Asil Çember' : 'Noble Circle';
+                    break;
+                case 'bronze':
+                    tierColor = 'var(--bronze)';
+                    tierIcon = 'fas fa-award';
+                    tierName = currentLanguage === 'tr' ? 'Prestij Loncası' : 'Prestige Guild';
+                    break;
+            }
+            
+            // Create navigation buttons
+            const prevProfileId = currentProfileIndex > 0 ? profiles[currentProfileIndex - 1].id : profiles[profiles.length - 1].id;
+            const nextProfileId = currentProfileIndex < profiles.length - 1 ? profiles[currentProfileIndex + 1].id : profiles[0].id;
+            
+            // Determine button text based on language
+            const prevText = currentLanguage === 'tr' ? 'Önceki Üye' : 'Previous Member';
+            const nextText = currentLanguage === 'tr' ? 'Sonraki Üye' : 'Next Member';
+            
+            // Determine section titles based on language
+            const bioTitle = currentLanguage === 'tr' ? 'Biyografi' : 'Biography';
+            const achievementsTitle = currentLanguage === 'tr' ? 'Önemli Başarılar' : 'Notable Achievements';
+            const networthTitle = currentLanguage === 'tr' ? 'Net Değer' : 'Net Worth';
+            const residenceTitle = currentLanguage === 'tr' ? 'Birincil İkamet' : 'Primary Residence';
+            const educationTitle = currentLanguage === 'tr' ? 'Eğitim' : 'Education';
+            const membersinceTitle = currentLanguage === 'tr' ? 'Üyelik Tarihi' : 'Member Since';
+            
+            profileModalBody.innerHTML = `
+                <div class="profile-modal-main">
+                    <div class="profile-modal-image">
+                        <img src="${profile.image}" alt="${profile.name}">
+                        <div style="margin-top: 30px; text-align: center;">
+                            <i class="${tierIcon}" style="font-size: 40px; color: ${tierColor};"></i>
+                            <p style="color: ${tierColor}; margin-top: 10px; font-weight: 600; font-size: 18px;">${tierName}</p>
+                        </div>
+                    </div>
+                    <div class="profile-modal-details">
+                        <h3 class="profile-modal-name">${profile.name}</h3>
+                        <p class="profile-modal-title">${profile.title}</p>
+                        
+                        <div class="profile-modal-info">
+                            <h4>${bioTitle}</h4>
+                            <p>${profile.bio}</p>
+                            
+                            <h4>${achievementsTitle}</h4>
+                            <p>${profile.achievements}</p>
+                            
+                            <h4>${networthTitle}</h4>
+                            <p>${profile.networth}</p>
+                            
+                            <h4>${residenceTitle}</h4>
+                            <p>${profile.residence}</p>
+                            
+                            <h4>${educationTitle}</h4>
+                            <p>${profile.education}</p>
+                            
+                            <h4>${membersinceTitle}</h4>
+                            <p>${profile.membersince}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-modal-nav">
+                    <button class="nav-btn" id="prevProfileBtn" data-profile-id="${prevProfileId}">
+                        <i class="fas fa-chevron-left"></i> ${prevText}
+                    </button>
+                    <button class="nav-btn" id="nextProfileBtn" data-profile-id="${nextProfileId}">
+                        ${nextText} <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            `;
+            
+            profileModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Add event listeners to the new buttons
+            document.getElementById('prevProfileBtn').addEventListener('click', function() {
+                const prevId = parseInt(this.getAttribute('data-profile-id'));
+                loadProfile(prevId);
+            });
+            
+            document.getElementById('nextProfileBtn').addEventListener('click', function() {
+                const nextId = parseInt(this.getAttribute('data-profile-id'));
+                loadProfile(nextId);
+            });
+        }
+        
+        // Function to update language
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update all elements with data-lang attribute
+            const translatableElements = document.querySelectorAll('[data-lang]');
+            translatableElements.forEach(element => {
+                const key = element.textContent.trim();
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update join button text
+            if (joinBtn && translations[lang] && translations[lang]['Become a Member']) {
+                joinBtn.textContent = translations[lang]['Become a Member'];
+            }
+            
+            // Update auction button text
+            if (auctionBtn && translations[lang] && translations[lang]['Place Bid (Diamond Members Only)']) {
+                auctionBtn.innerHTML = `<span>${translations[lang]['Place Bid (Diamond Members Only)']}</span>`;
+            }
+            
+            // Update package buttons
+            packageBtns.forEach(btn => {
+                if (translations[lang] && translations[lang]['Apply Now']) {
+                    btn.innerHTML = `<span>${translations[lang]['Apply Now']}</span>`;
+                }
+            });
+            
+            // Update close buttons
+            closeButtons.forEach(btn => {
+                if (translations[lang] && translations[lang]['Close']) {
+                    btn.textContent = translations[lang]['Close'];
+                }
+            });
+            
+            // Reload all category members to update tier names
+            loadAllCategoryMembers();
+        }
+        
+        // Function to setup event listeners
+        function setupEventListeners() {
+            // Open profile modal when clicking on top profile card
+            topProfileCard.addEventListener('click', function() {
+                loadProfile(1); // Load Alexander Sterling (first profile)
+            });
+            
+            // Category tab click events
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    // Don't trigger if clicking on close button or marquee member
+                    if (e.target.closest('.close-category') || e.target.closest('.marquee-member')) {
+                        return;
+                    }
+                    
+                    const tier = this.getAttribute('data-category');
+                    
+                    // If clicking on the same active tab, close it
+                    if (this.classList.contains('active')) {
+                        this.classList.remove('active');
+                        resetMarqueeState(tier);
+                    } else {
+                        setActiveCategory(tier);
+                    }
+                });
+            });
+            
+            // Close category buttons
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const categoryTab = this.closest('.category-tab');
+                    if (categoryTab) {
+                        categoryTab.classList.remove('active');
+                        const tier = categoryTab.getAttribute('data-category');
+                        resetMarqueeState(tier);
+                    }
+                });
+            });
+            
+            // Marquee hover events (pause on hover)
+            Object.keys(marqueeContainers).forEach(tier => {
+                const marqueeContainer = marqueeContainers[tier];
+                const track = marqueeTracks[tier];
+                
+                if (marqueeContainer && track) {
+                    marqueeContainer.addEventListener('mouseenter', function() {
+                        if (!expandedStates[tier]) {
+                            track.classList.add('paused');
+                            track.style.animationPlayState = 'paused';
+                        }
+                    });
+                    
+                    marqueeContainer.addEventListener('mouseleave', function() {
+                        if (!expandedStates[tier]) {
+                            track.classList.remove('paused');
+                            track.style.animationPlayState = 'running';
+                        }
+                    });
+                    
+                    // Marquee click to expand
+                    marqueeContainer.addEventListener('click', function(e) {
+                        // Don't expand if clicking on a member (they have their own click handler)
+                        if (e.target.closest('.marquee-member')) {
+                            return;
+                        }
+                        
+                        toggleExpandCategory(tier);
+                    });
+                }
+            });
+            
+            // Close profile modal
+            closeProfileModal.addEventListener('click', function() {
+                profileModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modals when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === profileModal) {
+                    profileModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (event.target === membershipModal) {
+                    membershipModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Show membership modal
+            joinBtn.addEventListener('click', function() {
+                membershipModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            footerJoinBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                membershipModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close membership modal
+            closeMembershipModal.addEventListener('click', function() {
+                membershipModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Package button click - redirect to Google Form
+            packageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const packageType = this.getAttribute('data-package');
+                    window.open(formLinks[packageType], '_blank');
+                });
+            });
+            
+            // Auction button click
+            auctionBtn.addEventListener('click', function() {
+                window.open(formLinks.auction, '_blank');
+            });
+            
+            // Language selector change
+            languageSelector.addEventListener('change', function() {
+                const selectedLang = this.value;
+                updateLanguage(selectedLang);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // Don't prevent default for links that have other handlers
+                    if (this.getAttribute('id') === 'footerJoinBtn') return;
+                    
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+</html>
